@@ -16,9 +16,7 @@ onready var player_root = get_node(PATH_TO_PARENT)
 onready var player = player_root.find_node(PLAYER_OBJECT)
 onready var state_label = player_root.find_node(SATATE_LABEL)
 # user actions
-onready var ui_left = 'ui_left'
-onready var ui_right = 'ui_right'
-onready var ui_up = 'ui_up'
+
 
 
 #refs to functions
@@ -43,6 +41,8 @@ func back():
 		state = get_node(history.pop_back())
 		_enter_state()
 
+func get_history_back_state():
+		return history.pop_back()
 
 func _enter_state():
 	if DEBUG:
@@ -94,8 +94,9 @@ func get_offset_x(direction_right):
 	
 
 func set_direction(player, direction_right):
-	player.scale = Vector2(get_direction(direction_right),1)
-	player.offset = Vector2(get_offset_x(direction_right),0)
+	player.flip_h = not direction_right
+	#player.scale = Vector2(get_direction(direction_right),1)
+	#player.offset = Vector2(get_offset_x(direction_right),0)
 	
 
 

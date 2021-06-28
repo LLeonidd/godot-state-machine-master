@@ -2,26 +2,26 @@ extends Node
 
 var fsm: StateMachine
 
-
 func enter():
-	fsm.player.play('idle')
+	#yield(get_tree().create_timer(2.0), "timeout")
+	fsm.player.play('close_attack')
 
 
 func exit(next_state):
 	fsm.change_to(next_state)
 
-
+####################################################
+### Optional handler functions for game loop events.
+### Delete the ones that you don't need.
+####################################################
 func process(_delta):
-	if Input.is_action_pressed(fsm.player_root.ui_right) or Input.is_action_pressed(fsm.player_root.ui_left):
-		exit("run")
-	if not fsm.player_root.is_on_floor():
-		exit('falling')
-
-
-func physics_process(_delta):
+	# Replace pass with your handler code
 	pass
 
-	
+func physics_process(_delta):
+	if not Input.is_action_pressed(fsm.player_root.ui_close_attack):
+		fsm.back()
+
 func input(_event):
 	## attacks listener#####
 	if _event.is_action_pressed(fsm.player_root.ui_close_attack):
@@ -29,12 +29,7 @@ func input(_event):
 	if _event.is_action_pressed(fsm.player_root.ui_ranged_attack):
 		exit('ranged_attack')
 	########################
-	if _event.is_action_pressed(fsm.player_root.ui_left) or _event.is_action_pressed(fsm.player_root.ui_right):
-		exit('run')
-	elif _event.is_action_pressed(fsm.player_root.ui_up) :
-		exit('jump')
 	
-
 func unhandled_input(_event):
 	pass
 

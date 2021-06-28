@@ -3,7 +3,9 @@ extends Node
 var fsm: StateMachine
 
 func enter():
-	fsm.player.play('jump')
+	fsm.player.play('ranged_attack')
+	yield(get_tree().create_timer(0.4), "timeout")
+	fsm.back()
 
 
 func exit(next_state):
@@ -15,7 +17,8 @@ func process(_delta):
 	pass
 
 func physics_process(_delta):
-	pass
+	if not Input.is_action_pressed(fsm.player_root.ui_ranged_attack):
+		fsm.back()
 
 func input(_event):
 	pass

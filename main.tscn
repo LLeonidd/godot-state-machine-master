@@ -1,23 +1,62 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 0.133333, 0.133333, 0.133333, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 530.351, 28.7569 )
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0.0658683 )
+colors = PoolColorArray( 0.133333, 0.133333, 0.133333, 1 )
+
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 11.5259, 69.7907 )
 
 [node name="main" type="Node2D"]
 
+[node name="floor" type="StaticBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="floor"]
+position = Vector2( 503.424, 536.259 )
+scale = Vector2( 15.7498, 208.035 )
+texture = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2( 464.699, 461.087 )
+shape = SubResource( 3 )
+
+[node name="wall_right" type="StaticBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="wall_right"]
+position = Vector2( 450.224, 370.444 )
+scale = Vector2( 0.0113428, 122.197 )
+texture = SubResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_right"]
+position = Vector2( 450.35, 379.109 )
+shape = SubResource( 6 )
+
+[node name="wall_left" type="StaticBody2D" parent="."]
+position = Vector2( -384.642, 0.17157 )
+
+[node name="Sprite" type="Sprite" parent="wall_left"]
+position = Vector2( 450.224, 362.665 )
+scale = Vector2( 0.0113428, 137.753 )
+texture = SubResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_left"]
+position = Vector2( 450.134, 363.579 )
+shape = SubResource( 6 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 75.2049, 23.5717 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="Sprite" type="Sprite" parent="StaticBody2D"]
-position = Vector2( 503.424, 461.332 )
-scale = Vector2( 15.7498, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 464.699, 459.087 )
-shape = SubResource( 1 )
+position = Vector2( 75.2049, -317.148 )
