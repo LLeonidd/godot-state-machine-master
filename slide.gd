@@ -2,14 +2,23 @@ extends Node
 
 var fsm: StateMachine
 var direction
+onready var slide_particles
 
 func enter():
 	fsm.player.play('slide')
+	fsm.player_root.double_jump = true
+	slide_particles=fsm.player.get_node('slide_particles')
+	slide_particles.emitting = true
+	slide_particles.visible = true
+	slide_particles.scale = Vector2(fsm.get_direction(!fsm.player.flip_h),1)
+	slide_particles.position.x = fsm.get_direction(!fsm.player.flip_h) * abs(slide_particles.position.x)
 	direction = fsm.get_direction(Input.is_action_pressed(fsm.player_root.ui_right))
 	
 
 
 func exit(next_state):
+	slide_particles.emitting = false
+	slide_particles.visible = false
 	fsm.change_to(next_state)
 
 

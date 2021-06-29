@@ -14,6 +14,7 @@ var ui_up = 'ui_up'
 var ui_close_attack = 'ui_close_attack'
 var ui_ranged_attack = 'ui_ranged_attack'
 
+
 func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP) # Vector2.UP - направелние снизу вверх. Внизу пол.
 	velocity.y +=  GRAVITY
@@ -22,8 +23,7 @@ func _physics_process(delta):
 	# lerp interpolation
 	# Interpolates the numbers x to 0, in 30% increments 
 	velocity.x = lerp(velocity.x, 0, 0.3) 
-
-
+	print(double_jump)
 
 
 

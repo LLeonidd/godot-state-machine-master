@@ -4,7 +4,9 @@ var fsm: StateMachine
 
 func enter():
 	fsm.player.play('ranged_attack')
-	yield(get_tree().create_timer(0.4), "timeout")
+	yield(get_tree().create_timer(0.3), "timeout")
+	fsm.player.get_node('Gun').shoot(fsm.get_direction(!fsm.player.flip_h))
+	yield(get_tree().create_timer(0.1), "timeout")
 	fsm.back()
 
 
@@ -13,12 +15,12 @@ func exit(next_state):
 
 
 func process(_delta):
-	# Replace pass with your handler code
 	pass
+	#if not Input.is_action_pressed(fsm.player_root.ui_ranged_attack):
+	#	fsm.back()
 
 func physics_process(_delta):
-	if not Input.is_action_pressed(fsm.player_root.ui_ranged_attack):
-		fsm.back()
+	pass
 
 func input(_event):
 	pass

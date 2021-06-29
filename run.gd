@@ -37,6 +37,8 @@ func input(_event):
 		Input.action_release(fsm.player_root.ui_left)
 	if _event.is_action_pressed(fsm.player_root.ui_close_attack):
 		exit('close_attack')
+	if _event.is_action_pressed(fsm.player_root.ui_ranged_attack):
+		exit('ranged_attack')
 	
 
 		

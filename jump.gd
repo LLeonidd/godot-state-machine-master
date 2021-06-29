@@ -8,7 +8,6 @@ func enter():
 	#yield(get_tree().create_timer(2.0), "timeout")
 	fsm.player.play('jump')
 	fsm.player_root.velocity.y = fsm.player_root.JUMPFORCE
-	print('------',fsm.get_history_back_state())
 	fsm.player_root.double_jump = true
 
 
