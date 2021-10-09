@@ -32,31 +32,31 @@ scale = Vector2( 15.7498, 208.035 )
 texture = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
-position = Vector2( 464.699, 461.087 )
+position = Vector2( 521.699, 461.087 )
 shape = SubResource( 3 )
 
 [node name="wall_right" type="StaticBody2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="wall_right"]
-position = Vector2( 450.224, 370.444 )
+position = Vector2( 507.224, 370.444 )
 scale = Vector2( 0.0113428, 122.197 )
 texture = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall_right"]
-position = Vector2( 450.232, 379.463 )
+position = Vector2( 507.232, 379.463 )
 shape = SubResource( 6 )
 
 [node name="wall_left" type="StaticBody2D" parent="."]
 position = Vector2( -384.642, 0.17157 )
 
 [node name="Sprite" type="Sprite" parent="wall_left"]
-position = Vector2( 450.224, 362.665 )
+position = Vector2( 585.223, 362.665 )
 scale = Vector2( 0.0113428, 137.753 )
 texture = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall_left"]
-position = Vector2( 450.222, 363.756 )
+position = Vector2( 585.222, 363.756 )
 shape = SubResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 143.879, 393.161 )
+position = Vector2( 278.879, 393.161 )

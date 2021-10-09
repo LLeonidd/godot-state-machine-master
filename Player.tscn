@@ -621,7 +621,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 105 )
 animation = "ranged_attack"
-frame = 5
+frame = 4
 playing = true
 
 [node name="slide_particles" type="Particles2D" parent="Sprite"]
