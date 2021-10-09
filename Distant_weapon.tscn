@@ -4,15 +4,15 @@
 [ext_resource path="res://Distant_weapon.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6.41341, 0.505768 )
+extents = Vector2( 6.47396, 0.505768 )
 
 [node name="Distant_weapon" type="RigidBody2D"]
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 6.39017, 0 )
+[node name="BulletCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2( 6.684, 0 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 6.6816, -0.0226869 )
+[node name="BulletSprite" type="Sprite" parent="."]
+position = Vector2( 6.682, 0 )
 texture = ExtResource( 1 )

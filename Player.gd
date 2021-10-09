@@ -23,7 +23,7 @@ func _physics_process(delta):
 	# lerp interpolation
 	# Interpolates the numbers x to 0, in 30% increments 
 	velocity.x = lerp(velocity.x, 0, 0.3) 
-	print(double_jump)
+
 
 
 

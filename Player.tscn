@@ -606,28 +606,23 @@ color = Color( 0.152941, 0.137255, 0.137255, 1 )
 script = ExtResource( 8 )
 
 [node name="current_state" type="Label" parent="."]
-margin_left = 95.5736
-margin_top = 90.1938
-margin_right = 184.574
-margin_bottom = 104.194
+margin_left = -11.4264
+margin_top = -33.8062
+margin_right = 77.574
+margin_bottom = -19.806
 text = "currrent_state"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 107.554, 124.388 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 107.673, 121.122 )
 frames = SubResource( 105 )
 animation = "ranged_attack"
-frame = 8
+frame = 5
 playing = true
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="slide_particles" type="Particles2D" parent="Sprite"]
 position = Vector2( 10.226, -3.717 )
@@ -638,7 +633,7 @@ randomness = 0.9
 process_material = SubResource( 108 )
 
 [node name="Gun" type="Position2D" parent="Sprite"]
-position = Vector2( 10, 1.00001 )
+position = Vector2( 11, 1 )
 script = ExtResource( 18 )
 
 [node name="states" type="Node" parent="."]

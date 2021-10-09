@@ -20,7 +20,7 @@ colors = PoolColorArray( 0.133333, 0.133333, 0.133333, 1 )
 gradient = SubResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 11.5259, 69.7907 )
+extents = Vector2( 11.65, 69.7907 )
 
 [node name="main" type="Node2D"]
 
@@ -43,7 +43,7 @@ scale = Vector2( 0.0113428, 122.197 )
 texture = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall_right"]
-position = Vector2( 450.35, 379.109 )
+position = Vector2( 450.232, 379.463 )
 shape = SubResource( 6 )
 
 [node name="wall_left" type="StaticBody2D" parent="."]
@@ -55,8 +55,8 @@ scale = Vector2( 0.0113428, 137.753 )
 texture = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall_left"]
-position = Vector2( 450.134, 363.579 )
+position = Vector2( 450.222, 363.756 )
 shape = SubResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 75.2049, -317.148 )
+position = Vector2( 143.879, 393.161 )

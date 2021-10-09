@@ -9,11 +9,13 @@ func direction_to_bool(direction):
 		return false
 	return true
 	
+
+	
 func shoot(direction = 1):
 	var bullet = Bullet.instance()
 	bullet.global_position = global_position
 	bullet.linear_velocity = Vector2(direction*BULLET_VELOCITY,0)
-	bullet.get_node("Sprite").flip_h = direction_to_bool(direction)
+	bullet.get_node("BulletSprite").flip_h = direction_to_bool(direction)
 	bullet.set_as_toplevel(true)
 	add_child(bullet)
 	return true
