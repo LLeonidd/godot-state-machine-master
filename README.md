@@ -1,5 +1,5 @@
 # Godot State Machine
-Godot State Machine using GDScript
+Godot Finite State Machine using GDScript
 
 [![Watch the video](https://img.youtube.com/vi/72V3n0DtuDk/hqdefault.jpg)]( https://youtu.be/72V3n0DtuDk )
 
