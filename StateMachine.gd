@@ -6,6 +6,9 @@ const DEBUG = true
 const PATH_TO_PARENT = '../'
 const PLAYER_OBJECT = 'Sprite' 
 const SATATE_LABEL = 'current_state' 
+const RIGHT_WALL = 'RightWall'
+const LEFT_WALL = 'LeftWall'
+const MIN_VELOCITY_FOR_SLIDE = -500 # The speed at which sliding is available. For example, do not slide on low walls
 
 var state: Object
 var history = []
@@ -15,6 +18,8 @@ var offset_list = [15,0] # values for offset left (0-index) or right (1-index), 
 onready var player_root = get_node(PATH_TO_PARENT)
 onready var player = player_root.find_node(PLAYER_OBJECT)
 onready var state_label = player_root.find_node(SATATE_LABEL)
+onready var right_wall_ray = player_root.find_node(RIGHT_WALL)
+onready var left_wall_ray = player_root.find_node(LEFT_WALL)
 # user actions
 
 
@@ -97,6 +102,9 @@ func set_direction(player, direction_right):
 	player.flip_h = not direction_right
 	#player.scale = Vector2(get_direction(direction_right),1)
 	#player.offset = Vector2(get_offset_x(direction_right),0)
+	
+func wall_detector():
+	return left_wall_ray.is_colliding() or right_wall_ray.is_colliding()
 	
 
 

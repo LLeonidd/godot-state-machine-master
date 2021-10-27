@@ -31,6 +31,8 @@ func physics_process(_delta):
 	fsm.player_root.velocity.y = fsm.player_root.SPEED_SLIDE
 	if fsm.player_root.is_on_floor():
 		exit('idle')
+	if not fsm.wall_detector():
+		exit('falling')
 
 	
 

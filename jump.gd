@@ -39,8 +39,17 @@ func physics_process(_delta):
 		exit('run')
 	if fsm.player_root.is_on_floor():
 		exit('idle')
-	if fsm.player_root.is_on_wall() and (Input.is_action_pressed(fsm.player_root.ui_left) or Input.is_action_pressed(fsm.player_root.ui_right)):
-		exit('slide')
+	if (
+			fsm.player_root.is_on_wall() 
+			and 
+			(Input.is_action_pressed(fsm.player_root.ui_left) 
+			or 
+			Input.is_action_pressed(fsm.player_root.ui_right)
+			)
+			and 
+			fsm.player_root.velocity.y < fsm.MIN_VELOCITY_FOR_SLIDE
+			):
+			exit('slide')
 	if fsm.player_root.velocity.y>0:
 		exit('falling')
 	

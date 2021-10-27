@@ -50,12 +50,12 @@ shape = SubResource( 6 )
 position = Vector2( -384.642, 0.17157 )
 
 [node name="Sprite" type="Sprite" parent="wall_left"]
-position = Vector2( 585.223, 362.665 )
+position = Vector2( 585.973, 300.485 )
 scale = Vector2( 0.0113428, 137.753 )
 texture = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall_left"]
-position = Vector2( 585.222, 363.756 )
+position = Vector2( 585.222, 297.831 )
 shape = SubResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
